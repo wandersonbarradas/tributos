@@ -1,0 +1,3 @@
+- todas as props na pasta props.
+- criar componente do botao voltar
+- criar component boxInfo relatorio final iptu
