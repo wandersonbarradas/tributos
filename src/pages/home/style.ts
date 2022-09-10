@@ -76,7 +76,6 @@ export const Container = styled.div`
         text-align: center;
 
         img {
-            width: 100%;
             max-width: 400px;
         }
     }
