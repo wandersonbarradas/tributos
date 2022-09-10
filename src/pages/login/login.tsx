@@ -29,7 +29,7 @@ export const NewLogin = ({ newUser }: Props) => {
 
     useEffect(() => {
         navigate('/login')
-    }, [])
+    }, [navigate])
 
     const handleAuthCadastro = async (e: MouseEvent<HTMLButtonElement>) => {
         setLoading(true)

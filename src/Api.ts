@@ -9,7 +9,6 @@ import {
     query,
     addDoc,
     updateDoc,
-    where,
     getDoc,
 } from "firebase/firestore/lite";
 import { TerrenoType } from "./types/terreno";

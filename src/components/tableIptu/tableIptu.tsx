@@ -9,7 +9,7 @@ type Props = {
     id: string
 }
 export const TableIptu = ({ data, id }: Props) => {
-    const { state, dispatch } = useContext(Context)
+    const { dispatch } = useContext(Context)
 
     const getValue = (value: string | number, action: string) => {
         dispatch({

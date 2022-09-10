@@ -24,11 +24,11 @@ export const Container = styled.div<Props>`
 
     label {
         position: absolute;
-        top: ${(props) => (props.value != "" ? "-10px" : "20px")};
+        top: ${(props) => (props.value !== "" ? "-10px" : "20px")};
         left: 15px;
         padding: 10px 0;
-        font-size: ${(props) => (props.value != "" ? "14px" : "16px")};
-        color: ${(props) => (props.value != "" ? "#009d87" : "#b3b3b3")};
+        font-size: ${(props) => (props.value !== "" ? "14px" : "16px")};
+        color: ${(props) => (props.value !== "" ? "#009d87" : "#b3b3b3")};
         pointer-events: none;
         transition: 0.5s;
     }

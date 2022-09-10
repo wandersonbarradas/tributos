@@ -1,5 +1,5 @@
 import * as C from './style'
-import { useEffect, useState, useContext, MouseEvent } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import Api from '../../../Api';
 import { AddUserType } from '../../../Api'
@@ -7,7 +7,6 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { TerrenoType } from '../../../types/terreno';
 import { TableIptu } from '../../../components/tableIptu/tableIptu';
 import { Context } from '../../../contexts/context'
-import Calculo from '../../../calculos/calculos'
 import { Validador } from '../../../helpers/validador'
 import { formatNumber } from '../../../helpers/formatRS'
 import { CadIptuType } from '../../../types/cadIptu';
@@ -18,16 +17,6 @@ import iptuFunction, { initialIptu } from '../../../calculos/calculos';
 type Props = {
     user: AddUserType | null;
 }
-type CalcTer = {
-    vbm: number,
-    floc: number,
-    vvt: number,
-}
-
-type CalcEdi = {
-    pontos: number,
-    vve: number,
-}
 
 export const Iptu = ({ user }: Props) => {
     const [active, setActive] = useState('terreno')
@@ -35,11 +24,8 @@ export const Iptu = ({ user }: Props) => {
     const [loading, setLoading] = useState(false)
     const [calculado, setCalculado] = useState(false)
     const [opacity, setOpacity] = useState(false)
-    const { state, dispatch } = useContext(Context)
-    const [calcTer, setCalcTer] = useState<CalcTer | null>(null)
+    const { state } = useContext(Context)
     const [calcIptu, setCalcIptu] = useState<IptuType>(initialIptu)
-    const [calcEdi, setCalcEdi] = useState<CalcEdi | null>(null)
-    const [calcTsu, setCalcTsu] = useState<number>(0)
 
     useEffect(() => {
         handleBtn()

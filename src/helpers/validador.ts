@@ -66,7 +66,7 @@ export const Validador = {
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
             let check = Validador.checagem(input);
-            if (check != true) {
+            if (check !== true) {
                 Validador.error(input, check);
                 send = false;
             }
@@ -81,7 +81,7 @@ export const Validador = {
                 let rule2 = rule[r].split("=");
                 switch (rule2[0]) {
                     case "required":
-                        if (input.value == "") {
+                        if (input.value === "") {
                             return "Campo não pode ser vazio.";
                         }
                         break;
@@ -91,7 +91,7 @@ export const Validador = {
                         }
                         break;
                     case "select":
-                        if (input.value == "Selecione") {
+                        if (input.value === "Selecione") {
                             return "Campo tem que ser selecinado.";
                         }
                         break;

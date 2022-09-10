@@ -15,7 +15,7 @@ export const Users = ({ user }: Props) => {
     } else {
       navigate('/home')
     }
-  }, [])
+  }, [user, navigate])
   const handleBtn = () => {
     let items: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('.aside__nav a')
     items.forEach((item) => {
